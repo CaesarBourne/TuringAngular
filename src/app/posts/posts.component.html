@@ -1,0 +1,8 @@
+<div class="container">
+  <input type="text" #postval (keyup.enter)="createPost(postval)">
+<ul class="list-group" >
+  <li class="list-group-item" *ngFor="let post of posts">  
+    {{post.title}}
+  </li>
+</ul>
+</div>

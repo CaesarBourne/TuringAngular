@@ -1,0 +1,48 @@
+<div>
+  <div>
+    <img src="assets/img/mtnback.png" class="backimag" />
+  </div>
+  <div class="container">
+    <div>
+      <h3>Sign in</h3>
+    </div>
+
+    <div>
+      <p>yello welcome to the single sign in digital world</p>
+    </div>
+
+    <div class="justify-content-start">
+      <form class="form-group justify-content-start" role="form" name="fom">
+        <div class="row">
+          <div class="col-md-3 num">
+            <input
+              type="text"
+              name="phone"
+              class="form-control"
+              [(ngModel)]="phoneng"
+            />
+          </div>
+
+          <div class="inner-addon left-addon">
+            <i class="glyphicon glyphicon-phone"></i>
+          </div>
+          <div class="col-md-3 justify-self-start" [className]="!phoneLengthMinimum()? 'num': 'complete container'">
+            <button  type="submit">Proceed</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="clr"></div>
+
+
+  </div>
+</div>
+<!-- 
+  <form class="form-inline" role="form">
+      <div class="form-group has-success has-feedback">
+        <label class="control-label" for="inputSuccess4">Name</label>
+        <input type="text" class="form-control" id="inputSuccess4">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+    </form> -->

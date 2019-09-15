@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'turing';
+
+  onMoshChange(){
+    console.log("Baba has been pressed");
+  }
 }

@@ -1,0 +1,68 @@
+a-box {
+  width: 100%;
+  height: 300px;
+}
+.num {
+  float: left;
+  padding: 10px;
+  border-radius: 10px;
+  width: 30%;
+}
+.clr {
+  clear: both;
+}
+.backimag{
+    width: 100%;
+}
+.num button {
+    border-radius: 40px;
+    border:1px solid #000;
+    width: 200px;
+    margin: 10px;
+    background-color: #fff;
+    color: #000;
+   
+  }
+  .complete button{
+    border-radius: 40px;
+    border:1px solid #000;
+    width: 200px;
+    margin: 10px;
+    background-color: #ebeb1c;
+    color: #000
+  
+    
+  }
+
+/* enable absolute positioning */
+.inner-addon {
+  position: relative;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon {
+  left: 0px;
+}
+.right-addon .glyphicon {
+  right: 0px;
+}
+
+/* add padding  */
+.left-addon input {
+  padding-left: 30px;
+}
+.right-addon input {
+  padding-right: 30px;
+}
+
+.posit{
+  display: grid;
+  grid-template-columns: 70% 30%;
+}

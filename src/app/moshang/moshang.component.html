@@ -1,0 +1,124 @@
+<div class="">
+  <!-- <div>
+    {{text | summary: 10}}
+    <h1>Mama</h1>
+</div> -->
+
+  <nav class="jumbotron bg-info text-white container-fluid text-center">
+    <h1 class="display-1">Caesar Angular</h1>
+    <ul class="nav nav-pills container">
+      <li class="nav-tabs">
+        <a
+          (click)="viewMode = 'dash'"
+          class="nav-link text-center pli"
+          [class.active]="viewMode == 'dash'"
+          >Dashboard</a
+        >
+      </li>
+      <li class="nav-tabs text-center">
+        <a
+          class="nav-link text-center pli"
+          (click)="viewMode = 'hero'"
+          [class.active]="viewMode == 'hero'"
+          >Heroes</a
+        >
+      </li>
+    </ul>
+  </nav>
+
+  <div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'dash'" class="container text-muted">
+      <div class="row rowd">
+        <div class="col-md-6 col-lg-3 " *ngFor="let card of cards">
+          <div class="card cardstyl">
+            <img
+              class="card-img-top card-body img-fluid imgcus"
+              src="{{ card.image }}"
+              alt=""
+            />
+            <div class="card-body ">
+              <h3 class="card-title">{{ card.name }}</h3>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
+                quas fugit dolorem earum minima. Voluptatibus ab dolores ipsam
+                nesciunt inventore!
+              </p>
+              <span class="glyphicon-star"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'hero'" class="">
+      <ul *ngFor="let item of list; even as i; trackBy: trackByCustom">
+        <li>{{ item.id }} - {{ item.name }}</li>
+      </ul>
+      <button class="renderBut btn btn-default" (click)="renderElements()">
+        Render
+      </button>
+      
+      <form  #f="ngForm" (ngSubmit)="onSubmitForm(f)" class="container">
+        <div class="form-group">
+          <label for="firstname">Firstname</label>
+      <input type="text" 
+      required class="form-control"
+        minlength="3"
+         maxlength="13"   
+        id="firstname" ngModel name="firstname" #tagname="ngModel" (change)="log(tagname)"  />
+       <div *ngIf="tagname.touched && !tagname.valid" class="alert-danger">
+         <div *ngIf="tagname.errors.minlength"> Firstname id less than the minimum length of {{tagname.errors.minlength.requiredLength}}</div>
+         <div *ngIf="tagname.errors.maxlength"> First name is more than the max length </div>
+         <div *ngIf="tagname.errors.required"> Firstname is required pls input</div>
+      </div>
+      </div>
+        <div class="form-group">
+          <label for="comment"></label>
+          <textarea ngModel name="bla"  id="comment" cols="30" rows="10" class="form-control"></textarea></div>
+          <div class="checkbox">
+            <label><input ngModel name="agrred" type="checkbox">Agree to Terms?
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="human"></label>
+            <select name="human" ngModel name="humans" id="human">
+              <option value=""></option>
+              <option *ngFor="let person of lister"  [ngValue]="person">{{person.name}}</option>
+            </select>
+            <div class="radio">
+              <label >Email
+                <input ngModel type="radio" name="radiohead" value="1">
+              </label>
+            </div>
+            <div class="radio">
+                <label >Phone
+                  <input ngModel type="radio" name="radiohead" value="2">
+                </label>
+              </div>
+          </div>
+          <p>{{f.value | json}}</p>
+          <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="display-4 text-center my-90">
+    Meet The Boss Emma
+  </div>
+
+  <div class="nav">
+    <a href="" class="nav-link">Chairman</a>
+    <a href="" class="nav-link">Power Ranger</a>
+    <a href="" class="nav-link">Batman</a>
+    <a href="" class="nav-link">Superman</a>
+  </div>
+</div>
+<!-- <div [hidden]="plan.length > 0">
+No courses
+</div>
+<div [hidden]="plan.length === 0">
+    Many showing courses
+    </div> -->
+<!-- <div *ngIf="plan.length > 0; else ban" >
+    Courses plaent o
+</div>
+<ng-template #ban>Courses are not available</ng-template> -->
